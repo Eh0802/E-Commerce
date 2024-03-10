@@ -12,6 +12,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 nav {
     height: 80px;
     display: flex;
@@ -25,6 +29,14 @@ img {
 
 p {
     line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .nav__container {
@@ -54,6 +66,10 @@ li {
     list-style-type: none;
 }
 
+.no__cursor {
+    cursor: not-allowed;
+}
+
 .nav__link {
     margin-left: 16px;
     text-decoration: none;
@@ -73,6 +89,57 @@ li {
 }
 .nav__link--primary:hover {
     text-decoration: none;
+}
+
+.btn__menu {
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color:#7342d6;
+}   
+
+.menu__backdrop {
+    position: absolute;
+    background-color: #242424;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 300ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu--open .menu__backdrop  {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu__list {
+    padding: 32px;
+}
+
+.menu__link {
+    font-size: 40px;
+    color: white;
+}
+
+.btn__menu--close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 8px;
+    color: white;
 }
 
 #landing {
@@ -141,6 +208,12 @@ button:active {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.row__colum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #highlights {
@@ -262,9 +335,88 @@ button:active {
     color: #bfbfbf;
 }
 
+.boo__features,
 .books__latest {
     flex-wrap: wrap;
 }
+
+#explore {
+    background-color: rgb(115, 66, 214, 0.1);
+}
+
+footer {
+    background-color: #242424;
+
+}
+
+.footer__logo {
+    display: flex;
+}
+
+.footer__logo--img {
+    width: 160px;
+    filter: grayscale(1) invert(1);
+}
+
+.footer__link,
+.footer__copyright {
+    color: white;
+}
+
+.footer__list {
+    margin: 24px 0 24px 0;
+}
+
+.footer__link {
+    padding: 16px;
+}
+
+@media (max-width: 768px) {
+    .header__description {
+        padding: 0 24px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+    
+    h2 {
+        font-size: 26px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+    .book {
+        width: 50%;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+    .nav__links {
+        display: none;
+    }
+
+    .btn__menu {
+        display: flex;
+    }
+
+    .highlight {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .highlight:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+
+
+
 
 
 
